@@ -6,6 +6,12 @@ Flask starter project...
 
 ## Quick Start
 
+
+### Upgrade to latest pip version
+```sh
+$ pip install --upgrade pip
+```
+
 ### Set Environment Variables
 
 Update *config.py*, and then run:
