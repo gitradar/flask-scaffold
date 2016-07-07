@@ -26,7 +26,7 @@ class TestUserBlueprint(BaseTestCase):
             self.assertIn(b'Logout', response.data)
             self.assertIn(b'Members', response.data)
             self.assertTrue(current_user.email == "ad@min.com")
-            self.assertTrue(current_user.is_active())
+            self.assertTrue(current_user.is_active)
             self.assertEqual(response.status_code, 200)
 
     def test_logout_behaves_correctly(self):
@@ -39,7 +39,7 @@ class TestUserBlueprint(BaseTestCase):
             )
             response = self.client.get('/logout', follow_redirects=True)
             self.assertIn(b'You were logged out. Bye!', response.data)
-            self.assertFalse(current_user.is_active())
+            self.assertFalse(current_user.is_active)
 
     def test_logout_route_requires_login(self):
         # Ensure logout route requres logged in user.
@@ -108,7 +108,7 @@ class TestUserBlueprint(BaseTestCase):
             )
             self.assertIn(b'Welcome', response.data)
             self.assertTrue(current_user.email == "test@tester.com")
-            self.assertTrue(current_user.is_active())
+            self.assertTrue(current_user.is_active)
             self.assertEqual(response.status_code, 200)
 
 
